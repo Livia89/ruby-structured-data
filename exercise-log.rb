@@ -62,13 +62,12 @@ ips_year.each do |year, list|
 end
 puts  "\n\n"
 puts "*------------*" * 8
-puts  "\n\n"
 
 #example:
 #188.83.64.154 => 404 - GET /robots.txt HTTP/1.1
 #188.83.64.154 => 404 - GET /sitemap.xml HTTP/1.1
 
-puts "\n\nIps requisition that resulted 4** errors\n\n"
+puts "\n\nRequests that resulted in 4** errors\n\n"
 reqErrors.each do |ip, info|
   puts "#{ip} => #{info}"
 end
