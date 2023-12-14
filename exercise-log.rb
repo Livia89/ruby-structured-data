@@ -14,7 +14,7 @@ arrayData = []
 ips = {}
 ips_year = {}
 
-for row in rows
+rows.each do |row|
   rowArr = row.gsub(/ - - | - |"/, '|').split("|")
 
   ip, date, req, error = rowArr[0], rowArr[1], rowArr[2], rowArr[3].strip
@@ -38,20 +38,20 @@ for row in rows
 
 end
 
-puts "Total de Ips que contactaram o servidor \n\n"
-ips.each do |key, value|
+puts "\n\nTotal IPs that made requests to the server\n\n"
+ips.each do |key, value, index|
   puts "#{key} => #{value}"
 end
 
 
-puts "*------------*" * 8
+print "*------------*" * 8
 
 #example:
 #2021 - 188.83.64.154 - 10
 #2021 - 63.141.251.236 - 5
 #2022 - 188.83.64.154 - 25
 
-puts "\nNumero contactos por ip diferentes/por ano \n\n"
+puts "\n\nSum requisition of all contacts by ip per year\n\n"
 ips_year.each do |year, list|
   list.each do |ip, amount|
     print "#{year} - #{ip} => #{amount}"
