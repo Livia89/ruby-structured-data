@@ -18,9 +18,8 @@ rows.each do |row|
   ips[ip] = 0 unless !ips.empty?
   ips.include?(ip) ? (ips[ip] = ips[ip] + 1) : (ips[ip] = 1)
 
-  # new position created unless the year key already exists &
+  # new position created unless the year key already exists & hash iteration over to count the number of ips requisitions to the server
   ips_year[yearRow] = {} unless ips_year.include?(yearRow)
-  # hash iteration over to count the number of ips requisitions to the server
   ips_year.each{|year, list|
     if(year == yearRow)
       ips_year[year].include?(ip) ?
